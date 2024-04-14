@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="Assembly_URDF">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.016684 -0.041535 0.014428"
+        rpy="0 0 0" />
+      <mass
+        value="2.5736" />
+      <inertia
+        ixx="0.0085564"
+        ixy="-1.2232E-08"
+        ixz="7.0438E-08"
+        iyy="0.014534"
+        iyz="1.8632E-08"
+        izz="0.0085555" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assembly_URDF/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assembly_URDF/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Servo1">
+    <inertial>
+      <origin
+        xyz="0.010896 0.072909 0.012699"
+        rpy="0 0 0" />
+      <mass
+        value="1.3736" />
+      <inertia
+        ixx="0.006764"
+        ixy="0.0004855"
+        ixz="-3.9895E-10"
+        iyy="0.0031857"
+        iyz="-2.0209E-09"
+        izz="0.0058138" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assembly_URDF/meshes/Servo1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assembly_URDF/meshes/Servo1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Servo_1_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="1.5708 0 -0.099474" />
+    <parent
+      link="base_link" />
+    <child
+      link="Servo1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Servo_2">
+    <inertial>
+      <origin
+        xyz="0.075602 2.7756E-17 -0.15"
+        rpy="0 0 0" />
+      <mass
+        value="2.2845" />
+      <inertia
+        ixx="0.04585"
+        ixy="2.1684E-19"
+        ixz="-3.7269E-18"
+        iyy="0.044332"
+        iyz="-2.1684E-18"
+        izz="0.0033463" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assembly_URDF/meshes/Servo_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assembly_URDF/meshes/Servo_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Servo2_joint"
+    type="revolute">
+    <origin
+      xyz="-0.024226 0.14081 0.012699"
+      rpy="0.76912 0 0" />
+    <parent
+      link="Servo1" />
+    <child
+      link="Servo_2" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Servo_3">
+    <inertial>
+      <origin
+        xyz="-0.031238 2.4538E-08 -0.17296"
+        rpy="0 0 0" />
+      <mass
+        value="2.7745" />
+      <inertia
+        ixx="0.053242"
+        ixy="4.1145E-09"
+        ixz="-0.0068865"
+        iyy="0.057462"
+        iyz="5.8529E-09"
+        izz="0.010736" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assembly_URDF/meshes/Servo_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assembly_URDF/meshes/Servo_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Servo_3_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.3"
+      rpy="1.0539 0 -3.1416" />
+    <parent
+      link="Servo_2" />
+    <child
+      link="Servo_3" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Servo_4">
+    <inertial>
+      <origin
+        xyz="1.1102E-15 0.078827 -2.498E-16"
+        rpy="0 0 0" />
+      <mass
+        value="1.2437" />
+      <inertia
+        ixx="0.002546"
+        ixy="-2.1792E-17"
+        ixz="-3.3119E-19"
+        iyy="0.0034157"
+        iyz="1.0937E-17"
+        izz="0.002546" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assembly_URDF/meshes/Servo_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assembly_URDF/meshes/Servo_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Servo_4_joint"
+    type="revolute">
+    <origin
+      xyz="-0.12726 0 -0.25975"
+      rpy="-1.5708 0 -1.279" />
+    <parent
+      link="Servo_3" />
+    <child
+      link="Servo_4" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>
