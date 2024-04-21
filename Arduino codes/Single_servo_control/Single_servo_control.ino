@@ -13,12 +13,12 @@ void setup() {
 
 void loop() {
   // Set servo motor speed and direction
-  for (int i = 0; i < 9; i++) {
-    setVelocity(255); // Rotate counterclockwise at full speed
+  for (int i = 0; i < 3; i++) {
+    setVelocity(-255); // Rotate counterclockwise at full speed
     delay(50); // Wait for 50 milliseconds
   }
   setVelocity(0);
-  delay(10000); // Wait for 10 seconds before repeating the loop
+  delay(5000); // Wait for 10 seconds before repeating the loop
 }
 
 void setVelocity(int vel) {
