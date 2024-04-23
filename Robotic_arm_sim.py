@@ -13,9 +13,9 @@ if __name__ == '__main__':
         sim.startSimulation()
         print("Started simulation")
 
-        body = sim.getObject("/Robotic_Arm")
+        body = sim.getObject("/base_link_respondable")
         Servo_1_joint = sim.getObject(
-            "Robotic_Arm\Assembly_URDF\meshes\Servo1")
+            "base_link_respondable\Assembly_URDF\meshes\Servo1")
         Servo_2_joint = sim.getObject(
             "Robotic_Arm\Assembly_URDF\meshes\Servo_2")
         Servo_3_joint = sim.getObject(
