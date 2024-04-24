@@ -1,9 +1,7 @@
 import sys
 from coppeliasim_zmqremoteapi_client import RemoteAPIClient
 import time
-from math import*
-import numpy as np
-import keyboard
+import math
 
 if __name__ == '__main__':
     try:
@@ -13,20 +11,26 @@ if __name__ == '__main__':
         sim.startSimulation()
         print("Started simulation")
 
-        body = sim.getObject("/base_link_respondable")
-        Servo_1_joint = sim.getObject(
-            "base_link_respondable\Assembly_URDF\meshes\Servo1")
-        Servo_2_joint = sim.getObject(
-            "Robotic_Arm\Assembly_URDF\meshes\Servo_2")
-        Servo_3_joint = sim.getObject(
-            "Robotic_Arm\Assembly_URDF\meshes\Servo_3")
-        Servo_4_joint = sim.getObject(
-            "Robotic_Arm\Assembly_URDF\meshes\Servo_4")
+        global joint1
+        global joint2
+        global joint3
+        global joint4
 
+        joint1 = sim.getObject("/Servo_1_joint")
+        joint2 = sim.getObject("/Servo2_joint")
+        joint3 = sim.getObject("/Servo_3_joint")
+        joint4 = sim.getObject("/Servo_4_joint")
 
+        def sysCall_actuation():
+            # put your actuation code here
+            sim.setJointTargetPosition(joint1, math.pi/4)
+            sim.setJointTargetPosition(joint2, math.pi/2)
+            sim.setJointTargetPosition(joint3, math.pi)
+            sim.setJointTargetPosition(joint4, math.pi/4)
 
-        joints = [Servo_1_joint, Servo_2_joint, Servo_3_joint, Servo_4_joint]
-
+        while True:
+            sysCall_actuation()
+            sim.switchThread()
 
     except KeyboardInterrupt:
         sim.stopSimulation()
